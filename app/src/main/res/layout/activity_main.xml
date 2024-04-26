@@ -1,66 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/mainContainer"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="#37A88E">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#376EA8"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <ImageView
-            android:id="@+id/homeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_home"
-            android:contentDescription="Home Icon" />
-        <TextView
-            android:id="@+id/homeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="WeatherApp">
-
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="10dp"
-
-
-        >
-        <EditText
-            android:id="@+id/searchEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Search City"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-        <ImageButton
-            android:id="@+id/searchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_search" />
-    </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-</LinearLayout>
+    tools:context=".MainActivity" />
