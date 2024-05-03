@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#37A88E"
+    android:background="#6495ED"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -17,8 +17,9 @@
 
         <ImageView
             android:id="@+id/homeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_launcher_foreground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:contentDescription="Home Icon" />
 
         <TextView
@@ -35,10 +36,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp"
-
-
-        >
+        android:padding="10dp">
 
         <EditText
             android:id="@+id/searchEditText"
@@ -56,15 +54,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_search" />
+
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_city" />
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="590dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:listitem="@layout/item_city" />
 
+  <TextView
+    android:layout_width="match_parent"
+    android:id="@+id/favorites"
+    android:layout_height="wrap_content"
+    android:textSize="40dp"
+    android:background="#376EA8"
+    android:textAlignment="center"
+    android:text="Favorites" />
 </LinearLayout>
+

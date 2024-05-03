@@ -64,6 +64,11 @@
             android:textSize="48sp"
             tools:text="24°" />
 
+
+
+
+
+
     </LinearLayout>
 
     <ProgressBar
