@@ -29,6 +29,18 @@ class CitiesFragment : Fragment() {
         binding = FragmentCitiesBinding.inflate(layoutInflater)
         binding.recyclerView.adapter = adapter
         adapter.submitList(cities)
+
+        // Добавление обработчика нажатия на кнопку поиска
+        binding.searchButton.setOnClickListener {
+            val city = binding.searchEditText.text.toString()
+            if (city.isNotEmpty()) {
+                parentFragmentManager.commit {
+                    replace(R.id.mainContainer, WeatherFragment::class.java, bundleOf(WeatherFragment.CITY_KEY to city))
+                    addToBackStack("weather")
+                }
+            }
+        }
+
         return binding.root
     }
 }
