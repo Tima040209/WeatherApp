@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.Model.API.WeatherApiClient
 import com.example.weatherapp.Model.Entity.weather_model.WeatherResponse
+import com.example.weatherapp.R
+import com.example.weatherapp.cities_fragment.CitiesFragment
 import com.example.weatherapp.databinding.FragmentWeatherBinding
 
 class WeatherFragment: Fragment() {
@@ -26,6 +29,12 @@ class WeatherFragment: Fragment() {
         }
         viewModel.weather.observe(this.viewLifecycleOwner){
             handleResult(it)
+        }
+        binding.homeText.setOnClickListener {
+            parentFragmentManager.commit {
+                replace(R.id.mainContainer, CitiesFragment())
+                addToBackStack(null)
+            }
         }
         return binding.root
     }
