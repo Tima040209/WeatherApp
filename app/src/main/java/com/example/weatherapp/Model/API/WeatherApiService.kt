@@ -9,11 +9,9 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface WeatherApiService {
-
     @GET("weather")
     suspend fun getCurrentWeather(
         @Query("q") cityName: String,
-        @Query("appid") apiKey: String = BuildConfig.API_KEY
+        @Query("appid") apiKey: String = "b16c935423febc2c1e80889552e6e6b0"
     ): WeatherResponse
-
 }

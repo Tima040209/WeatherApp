@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.weatherapp.Model.API.WeatherApiClient
 import com.example.weatherapp.Model.Entity.weather_model.WeatherResponse
 import com.example.weatherapp.R
@@ -24,10 +25,10 @@ class WeatherFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentWeatherBinding.inflate(layoutInflater)
         viewModel.onEvent(WeatherEvents.FetchCityWeather(city))
-        viewModel.isLoading.observe(this.viewLifecycleOwner){
+        viewModel.isLoading.observe(viewLifecycleOwner) {
             binding.progressBar.isVisible = it
         }
-        viewModel.weather.observe(this.viewLifecycleOwner){
+        viewModel.weather.observe(viewLifecycleOwner) {
             handleResult(it)
         }
         binding.homeText.setOnClickListener {
@@ -38,6 +39,8 @@ class WeatherFragment: Fragment() {
         }
         return binding.root
     }
+
+
 
     private fun handleResult(response: WeatherResponse) = with(binding){
         cityTextView.text = response.name
